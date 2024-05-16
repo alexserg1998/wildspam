@@ -5,13 +5,13 @@ import requests
 
 def predict_image(image_path):
     files = {'files': open(image_path, 'rb')}
-    response = requests.post("http://localhost:8000/swin_predict_files", files=files)
+    response = requests.post("http://0.0.0.0:8000/swin_predict_files", files=files)
     print(response.json())
 
 
 def predict_folder(folder_path, batch_size):
     data = {"folder_path": folder_path, "batch_size": batch_size}
-    response = requests.post("http://localhost:8000/swin_predict_image", json=data)
+    response = requests.post("http://0.0.0.0:8000/swin_predict_image", json=data)
     print(response.json())
 
 
